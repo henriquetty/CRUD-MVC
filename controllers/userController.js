@@ -1,10 +1,10 @@
 const User = require("../models/User");
 
-const get = (req, res) => {
-    res.render("adduser");
-}
+const renderPage = (req, res) => {
+    return res.render("adduser");
+};
 
-const post = async (req, res) => {
+const addUser = async (req, res) => {
     const { name, email, age } = req.body;
 
     //needs to improve validation
@@ -14,10 +14,20 @@ const post = async (req, res) => {
     }
 
     return res.redirect("/");
-}
+};
 
-const editUser = async (req, res) => {
+const deleteUser = async (req, res) => {
+    if (req.query.uuid != undefined && req.query.uuid != null) {
+        const test = await User.destroy({
+            where: {
+                uuid: req.query.uuid,
+            }
+        });
+    };
     
-}
+    return res.redirect("/");
+};
 
-module.exports = { get, post };
+module.exports = { 
+    renderPage,addUser, deleteUser
+};
