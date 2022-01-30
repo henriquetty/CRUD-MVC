@@ -17,31 +17,28 @@
                 <p class="text-center fw-bold">CRUD Application</p>
             </header>
             <div class="d-flex justify-content-center">
-                <ul class="nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="/">HOME</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="/adduser">ADICIONAR USUÁRIO</a>
-                    </li>
-                </ul>
+                <p class="text-primary">EDIT USER</p>
             </div>
         </div>
         <div class="container mt-5">
-            <form action="/adduser" method="post">
+            <form action="/edituser?uuid=<%= user.uuid %>" method="post">
                 <div class="mb-3">
                     <label for="name" class="form-label">Nome</label>
-                    <input type="text" class="form-control" id="name" aria-describedby="userName" name="name">
+                    <input type="text" class="form-control" id="name" 
+                    aria-describedby="userName" name="name" value="<%= user.name %>">
                 </div>
                 <div class="mb-3">
                     <label for="email" class="form-label">Email</label>
-                    <input type="email" class="form-control" id="email" name="email">
+                    <input type="email" class="form-control" id="email" 
+                    name="email" value="<%= user.email %>">
                 </div>
                 <div class="mb-3">
-                    <label for="email" class="form-label">Idade</label>
-                    <input type="number" min="0" max="100" class="form-control" id="age" name="age">
+                    <label for="age" class="form-label">Idade</label>
+                    <input type="number" min="0" max="100" class="form-control" 
+                    id="age" name="age" value="<%= user.age %>">
                 </div>
-                <button type="submit" class="btn btn-primary">Enviar</button>
+                <a class="btn btn-danger" href="/">Voltar</a>
+                <button type="submit" class="btn btn-primary">Atualizar</button>
             </form>
         </div>
     </div>

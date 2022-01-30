@@ -6,7 +6,7 @@ const renderPage = async (req, res) => {
     const users = await User.findAll();
     users.forEach(user => userData.push(user));
     
-    res.render("index", {
+    return res.render("index", {
         userData
     });
 }

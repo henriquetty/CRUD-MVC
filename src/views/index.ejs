@@ -44,7 +44,7 @@
                             <td><%= user.email %></td>
                             <td><%= user.age %></td>
                             <td>
-                                <form action="edituser?uuid=<%= user.uuid %>" method="post" class="d-inline">
+                                <form action="edituser/<%= user.uuid %>" method="get" class="d-inline">
                                     <button class="btn btn-info">Editar</button>
                                 </form>
                                 <form action="deleteuser?uuid=<%= user.uuid %>" method="post" class="d-inline">

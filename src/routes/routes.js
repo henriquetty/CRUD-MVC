@@ -14,8 +14,8 @@ router.get("/adduser", addUserController.renderPage);
 router.post("/adduser", addUserController.addUser);
 
 //edit user
-router.get("/edit", editUserController.renderPage);
-router.post("/edituser", (req, res) => {res.json( {"status": "not yet working"} )});
+router.get("/edituser/:uuid", editUserController.renderPage);
+router.post("/edituser", editUserController.editUser);
 
 //delete user
 router.post("/deleteuser", deleteUserController.deleteUser);
