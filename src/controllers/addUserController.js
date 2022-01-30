@@ -16,18 +16,6 @@ const addUser = async (req, res) => {
     return res.redirect("/");
 };
 
-const deleteUser = async (req, res) => {
-    if (req.query.uuid != undefined && req.query.uuid != null) {
-        const test = await User.destroy({
-            where: {
-                uuid: req.query.uuid,
-            }
-        });
-    };
-    
-    return res.redirect("/");
-};
-
-module.exports = { 
-    renderPage,addUser, deleteUser
-};
+module.exports = {
+    renderPage, addUser
+}

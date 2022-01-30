@@ -1,6 +1,6 @@
 const User = require("../models/User");
 
-const get = async (req, res) => {
+const renderPage = async (req, res) => {
     const userData = [];
 
     const users = await User.findAll();
@@ -11,4 +11,4 @@ const get = async (req, res) => {
     });
 }
 
-module.exports = { get };
+module.exports = { renderPage };

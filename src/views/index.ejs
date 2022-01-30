@@ -37,17 +37,17 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <% userData.forEach(function(item) { %>
+                    <% userData.forEach(function(user) { %>
                         <tr>
-                            <td scope="row"><%= item.userId %></td>
-                            <td><%= item.name %></td>
-                            <td><%= item.email %></td>
-                            <td><%= item.age %></td>
+                            <td scope="row"><%= user.userId %></td>
+                            <td><%= user.name %></td>
+                            <td><%= user.email %></td>
+                            <td><%= user.age %></td>
                             <td>
-                                <form action="edituser" method="post" class="d-inline">
+                                <form action="edituser?uuid=<%= user.uuid %>" method="post" class="d-inline">
                                     <button class="btn btn-info">Editar</button>
                                 </form>
-                                <form action="deleteuser?uuid=<%= item.uuid %>" method="post" class="d-inline">
+                                <form action="deleteuser?uuid=<%= user.uuid %>" method="post" class="d-inline">
                                     <button class="btn btn-danger">Deletar</button>
                                 </form>
                             </td>

@@ -1,19 +1,23 @@
 const express = require("express");
 const app = express();
+const path = require("path");
 
 const routes = require("./routes/routes")
-const User = require("./models/User");
 
 //parse body
 app.use(express.urlencoded({ extended: true }));
 
 //setting up static file serving
-app.use(express.static("public"));
+app.use(express.static(path.join(__dirname + "/public")));
 
 //set view engine
 app.set("view engine", "ejs");
+app.set("views", path.join(__dirname + "/views"));
 
 //routes
 app.use("/", routes);
 
-app.listen(8080);
+const port = process.env.PORT || 3333;
+app.listen(port, () => {
+    console.log("Server running on port: " + port);
+});

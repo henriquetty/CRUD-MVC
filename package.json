@@ -2,7 +2,7 @@
   "name": "crud-mvc",
   "version": "1.0.0",
   "description": "CRUD MVC with ExpressJS, Sequelize and MariaDB",
-  "main": "server.js",
+  "main": "./src/server.js",
   "scripts": {
     "dev": "nodemon .",
     "run": "node ."
