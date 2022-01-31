@@ -1,7 +1,6 @@
 const User = require("../models/User");
 
 const renderPage = async (req, res) => {
-
     const user = await User.findOne({
         where: {
             uuid: req.params.uuid,
@@ -14,8 +13,7 @@ const renderPage = async (req, res) => {
        });
    }
 
-   res.redirect("/");
-
+   return res.redirect("/");
 }
 
 const editUser = async (req, res) => {
