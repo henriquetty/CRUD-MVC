@@ -5,7 +5,8 @@
   "main": "./src/server.js",
   "scripts": {
     "dev": "nodemon .",
-    "run": "node ."
+    "run": "node .",
+    "create:table": "node ./src/utils/createTable.js"
   },
   "author": "Henrique R. Matteus",
   "license": "ISC",
