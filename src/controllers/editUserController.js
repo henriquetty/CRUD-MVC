@@ -13,18 +13,22 @@ const renderPage = async (req, res) => {
        });
    }
 
-   return res.redirect("/");
+   return res.redirect("/?error=userNotFound");
 }
 
 const editUser = async (req, res) => {
     const { name, email, age } = req.body;
-    User.update({name, email, age}, {
+    
+    User.findOne({
         where: {
             uuid: req.query.uuid,
         }
+    }).then((user) => {
+        user.update({ name, email, age });
+        return res.redirect("/");
+    }).catch(() => {
+        return res.redirect("/?error=invalidUUID");
     });
-
-    return res.redirect("/");
 }
 
 module.exports = {

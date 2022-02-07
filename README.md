@@ -13,8 +13,8 @@ Aplicação para cadastro de usuários construída utilizando o padrão MVC com 
 
 Antes de começar, verifique se você atende aos seguintes requisitos:
 * Tenha instalado a versão mais recente do <a href="https://nodejs.org/en/" target="_blank">NodeJS e NPM</a>
-* Possua o banco de dados <a href="https://www.mysql.com/" target=_blank>MySQL</a> ou <a href="https://mariadb.org/" >MariaDB</a> executando em seu sistema operacional.
-* E por final, precisaremos do GIT, poderá fazer o download <a href="https://git-scm.com/">aqui</a>
+* Possua o banco de dados [MySQL](https://www.mysql.com/) ou [MariaDB](https://mariadb.org/) executando em seu sistema operacional.
+* E por final, precisaremos do GIT, poderá fazer o download [aqui](https://git-scm.com/)
 ---
 
 ## 🚀 Instalando
